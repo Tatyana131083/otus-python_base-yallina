@@ -72,7 +72,7 @@ def delete_contact(lists_of_contacts):
     return
 
 def save_file(lists_of_contacts):
-    with open('data.csv', 'w', encoding='utf-8', newline = '') as file:
+    with open('data.csv', 'w', encoding='utf-8', newline ='') as file:
         writer  = csv.writer(file)
         for item in lists_of_contacts:
             string_data = list(item.values())
