@@ -1,15 +1,16 @@
 import csv
 import os
+
 def valid_menu(to_do):
     if to_do.isdigit() and int(to_do) in (1,2,3,4,5):
         return True
     else: return False
+
 def valid_digit(number):
     if number.isdigit():
         return True
     else:
         return False
-
 
 def open_file():
     with open('data.csv', 'r', encoding='utf-8') as file:
@@ -22,14 +23,17 @@ def open_file():
             contact["email"] = row[2]
             lists_of_contacts.append(contact)
         return lists_of_contacts
+
 def clear_console():
     os.system('cls||clear')
 
 def show_contacts(lists_of_contacts):
     for item in lists_of_contacts:
         print(f'{item['name']:<30}{item['number']:<20}{item['email']:<20} ')
+
 def string_to_continue ():
     print(input("Нажмите ENTER для продолжения..."))
+
 def create_contact(lists_of_contacts):
     new_contact = {}
     name = input("Введите имя:")
